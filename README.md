@@ -113,13 +113,9 @@ ORDER BY total_net_sales DESC;
 
 > The query can also be accessed through the file: bigquerysyntax
 
-<p align="center">
-    <kbd> <img width="1000" alt="analysis result" src="./assets/analysis-result.png"> </kbd> <br>
-    Tabel Hasil Analisis
-</p>
-<br>
+## Data Visualization
+Looker Studio (https://lookerstudio.google.com/reporting/7ebd974e-3990-4746-bd63-436235ddadf6)
 
----
 
 
 
