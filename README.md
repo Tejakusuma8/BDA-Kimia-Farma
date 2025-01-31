@@ -53,34 +53,57 @@ yang dilakukan.
     <br>
     
 ```sql
-CREATE TABLE kimia_farma.kf_analysis AS
-SELECT tr.transaction_id, 
-  tr.date, 
-  tr.branch_id, 
-  kc.branch_name, 
-  kc.kota, 
-  kc.provinsi, 
-  kc.rating AS rating_cabang, 
-  tr.customer_name, 
-  tr.product_id, 
-  pd.product_name, 
-  pd.price AS actual_price, 
-  tr.discount_percentage,
-  CASE
-    WHEN pd.price <= 50000 then 0.1
-    WHEN pd.price > 50000 AND pd.price <= 100000 then 0.15
-    WHEN pd.price > 100000 AND pd.price <= 300000 then 0.2
-    WHEN pd.price > 300000 AND pd.price <= 500000 then 0.25
-    ELSE 0.3      --pd.price >500000 
-    END AS persentase_gross_laba,
-  (pd.price * (1-tr.discount_percentage)) AS nett_sales,
-  ((pd.price * (1-tr.discount_percentage)) - tr.price)AS nett_profit,
-  tr.rating AS rating_transaksi
-FROM kimia_farma.kf_final_transaction AS tr 
-  LEFT JOIN kimia_farma.kf_kantor_cabang AS kc 
-  ON (tr.branch_id = kc.branch_id)
-  LEFT JOIN kimia_farma.kf_product AS pd
-  ON (tr.product_id = pd.product_id)
+BigQuery Syntax for Task Sales Performance Big Data Analytics Kimia Farma Business Year 2020-2023
+CREATE TABLE `kimiafarma.kf_analysis` AS
+SELECT
+    t.transaction_id,
+    t.date,
+    t.branch_id,
+    c.branch_name,
+    c.city,
+    c.province,
+    t.rating AS rating_transaction,
+    t.customer_name,
+    t.product_id,
+    p.product_name,
+    t.price,
+    t.discount_percentage,
+    CASE 
+        WHEN t.price <= 50000 THEN 0.1
+        WHEN t.price > 50000 AND t.price <= 100000 THEN 0.15
+        WHEN t.price > 100000 AND t.price <= 300000 THEN 0.2
+        WHEN t.price > 300000 AND t.price <= 500000 THEN 0.25
+        ELSE 0.3
+    END AS gross_profit_percentage,
+    (t.price * (1 - (t.discount_percentage / 100))) AS nett_sales,
+    (t.price * (1 - (t.discount_percentage / 100)) * 
+    CASE 
+        WHEN t.price <= 50000 THEN 0.1
+        WHEN t.price > 50000 AND t.price <= 100000 THEN 0.15
+        WHEN t.price > 100000 AND t.price <= 300000 THEN 0.2
+        WHEN t.price > 300000 AND t.price <= 500000 THEN 0.25
+        ELSE 0.3
+    END) AS nett_profit,
+    c.rating AS rating_branch
+FROM `kimiafarma.kf_final_transaction` t
+JOIN `kimiafarma.kf_kantor_cabang` c ON t.branch_id = c.branch_id
+JOIN `kimiafarma.kf_product` p ON t.product_id = p.product_id;
+SELECT
+    COUNT(*) AS total_transactions,
+    MIN(date) AS earliest_date,
+    MAX(date) AS latest_date,
+    AVG(price) AS average_price,
+    AVG(discount_percentage) AS average_discount_percentage,
+    AVG(gross_profit_percentage) AS average_gross_profit_percentage,
+    SUM(nett_sales) AS total_net_sales,
+    SUM(nett_profit) AS total_net_profit,
+    AVG(rating_transaction) AS average_transaction_rating,
+    AVG(rating_branch) AS average_branch_rating,
+    branch_name,
+    COUNT(DISTINCT customer_name) AS total_customers
+FROM `kimiafarma.kf_analysis`
+GROUP BY branch_name
+ORDER BY total_net_sales DESC;
 ;
 ```
     
@@ -88,7 +111,7 @@ FROM kimia_farma.kf_final_transaction AS tr
 </details>
 <br>
 
-> The query can also be accessed through the file: query.sql
+> The query can also be accessed through the file: bigquerysyntax
 
 <p align="center">
     <kbd> <img width="1000" alt="analysis result" src="./assets/analysis-result.png"> </kbd> <br>
