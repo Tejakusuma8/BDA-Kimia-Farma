@@ -1,4 +1,4 @@
-BigQuery Syntax for Task Sales Performance Big Data Analytics Kimia Farma
+BigQuery Syntax for Task Sales Performance Big Data Analytics Kimia Farma Business Year 2020-2023
 CREATE TABLE `kimiafarma.kf_analysis` AS
 SELECT
     t.transaction_id,
