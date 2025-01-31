@@ -116,3 +116,4 @@ ORDER BY total_net_sales DESC;
 ## Data Visualization
 Looker Studio (https://lookerstudio.google.com/reporting/7ebd974e-3990-4746-bd63-436235ddadf6)
 
+![alt text](https://github.com/Tejakusuma8/BDA-Kimia-Farma/blob/main/Dashboard/Dashboard_Performance_Analytics_Kimia_Farma_WahyuTejakusumaK.jpg)
