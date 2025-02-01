@@ -1,5 +1,8 @@
 # BDA-Kimia-Farma
 
+## About Me
+![alt text](https://github.com/Tejakusuma8/BDA-Kimia-Farma/blob/main/Docs/About%20Me.png)
+
 ## Data Visualization
 Looker Studio (https://lookerstudio.google.com/reporting/7ebd974e-3990-4746-bd63-436235ddadf6)
 
