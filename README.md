@@ -9,6 +9,7 @@ Looker Studio (https://lookerstudio.google.com/reporting/7ebd974e-3990-4746-bd63
 ![alt text](https://github.com/Tejakusuma8/BDA-Kimia-Farma/blob/main/Dashboard/Dashboard_Performance_Analytics_Kimia_Farma_WahyuTejakusumaK.jpg)
 
 ## About Program
+![alt text](https://github.com/Tejakusuma8/BDA-Kimia-Farma/blob/main/Docs/Cover%20PPT.png)
 The Rakamin Academy and Kimia Farma Big Data Analytics Project-Based Internship is a self-development and career acceleration program for those interested in Big Data Analytics roles at Kimia Farma. It provides basic learning materials, including Article Reviews and Company Coaching Videos, to introduce the required competencies and skills. Weekly assessments and a final project will serve as your portfolio.
 
 ## About Company
