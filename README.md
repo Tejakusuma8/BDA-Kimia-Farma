@@ -9,7 +9,6 @@ Looker Studio (https://lookerstudio.google.com/reporting/7ebd974e-3990-4746-bd63
 ![alt text](https://github.com/Tejakusuma8/BDA-Kimia-Farma/blob/main/Dashboard/Dashboard_Performance_Analytics_Kimia_Farma_WahyuTejakusumaK.jpg)
 
 ## About Program
-![alt text](https://github.com/Tejakusuma8/BDA-Kimia-Farma/blob/main/Docs/Cover%20PPT.png)
 The Rakamin Academy and Kimia Farma Big Data Analytics Project-Based Internship is a self-development and career acceleration program for those interested in Big Data Analytics roles at Kimia Farma. It provides basic learning materials, including Article Reviews and Company Coaching Videos, to introduce the required competencies and skills. Weekly assessments and a final project will serve as your portfolio.
 
 ## About Company
@@ -21,6 +20,7 @@ Kimia Farma is one of Indonesia's leading pharmaceutical companies, specializing
 The Big Data Analytics project at Kimia Farma focuses on utilizing data-driven insights to optimize business processes and enhance decision-making across various functions. As a leading pharmaceutical company in Indonesia, Kimia Farma has accumulated vast amounts of data from transactions, product inventories, and branch performance. However, there is a need to better analyze and leverage this data to drive improvements in sales performance, operational efficiency, and customer understanding. The project aims to aggregate and analyze data from four key datasets: transaction details from kf_final_transaction.csv, inventory data from kf_inventory.csv, branch information from kf_kantor_cabang.csv, and product data from kf_product.csv. The objective is to uncover patterns and trends that can help Kimia Farma make more informed decisions, identify growth opportunities, and enhance overall performance. The key challenge lies in transforming this data into actionable insights that can support the company's strategic goals and improve its competitive advantage in the pharmaceutical market.
 
 ## Final Task
+![alt text](https://github.com/Tejakusuma8/BDA-Kimia-Farma/blob/main/Docs/Cover%20PPT.png)
 
 **Dataset**
 - kf_final_transaction
